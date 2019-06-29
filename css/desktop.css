@@ -1,3 +1,8 @@
+/* universal */
+html{
+  font-size: 16pt;
+}
+
 /* section containers */
 .container{
   width: 90%;
@@ -13,9 +18,19 @@ h1, h2, h3, h4, h5, h6{
   font-family: 'Oswald', sans-serif;
 }
 
+h1{
+  font-size: 1.8rem;
+}
+
+h3{
+  font-size: .7rem;
+}
+
 /* header */
 header{
   width: 100%;
+  position: fixed;
+  z-index: 5;
 }
 
 header .container{
@@ -38,25 +53,72 @@ nav a{
   display: flex;
   align-items: center;
   color: #999;
+  font-weight: bold;
   text-decoration: none;
-  padding: 0 15px;
+  padding: 0 20px;
   transition:
-    background-color .3s ease-out,
-    color .3s ease-out;
+    background-color .3s ease-out;
 }
 
+nav a.active,
 nav a:HOVER{
   background-color: #2b2b2b;
   color: #ccc;
 }
 
-/* article spotlight */
-article.spotlight{
+/* spotlight */
+.spotlight{
   width: 100%;
   height: calc(100vh - 60px);
   background-size: cover;
   background-repeat: no-repeat;
   background-image:url(https://img.wallpapersafari.com/desktop/1920/1080/93/20/6Iah3P.jpg);
+  padding-top: 80px; /* fixes sticky header space */
+}
+
+/* banner */
+.banner-md{
+  width: 100%;
+  height: 300px;
+  margin-bottom: 120px;
+  padding-top: 60px; /* fixes sticky header space */
+}
+
+.pointer-down{
+  display: flex;
+  width: 100%;
+  height: 80px;
+  position: absolute;
+}
+
+.gray-bar{
+  width: 50%;
+  background-color: #eee;
+}
+
+.expertise-bg{
+  width: 100%;
+  height: 300px;
+  background-color: #efefef;
+  background-image:url(https://www.mm-sports.eu/wp-content/uploads/2018/02/Home_Neu_1400x640.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  filter: brightness(.3);
+  position: absolute;
+  z-index: -3;
+  padding-bottom: 80px;
+}
+
+.banner-text{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: bold;
 }
 
 /* footer homepage */
