@@ -1,5 +1,70 @@
-/* UNIVERSAL */
-*{
-  margin: 0;
-  padding: 0;
+/* section containers */
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.black-bg{
+  background-color: #000;
+}
+
+/* fonts */
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Oswald', sans-serif;
+}
+
+/* header */
+header{
+  width: 100%;
+}
+
+header .container{
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  color: #ccc;
+}
+
+nav{
+  display: flex;
+}
+
+nav a{
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  text-decoration: none;
+  padding: 0 15px;
+  transition:
+    background-color .3s ease-out,
+    color .3s ease-out;
+}
+
+nav a:HOVER{
+  background-color: #2b2b2b;
+  color: #fff;
+}
+
+/* article spotlight */
+article.spotlight{
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image:url(https://img.wallpapersafari.com/desktop/1920/1080/93/20/6Iah3P.jpg);
+}
+
+/* footer homepage */
+footer.homepage{
+  width: 100%;
+  padding: 10px 0;
+  color: #ccc;
+  font-size: smaller;
+  position: fixed;
+  bottom: 0;
 }
