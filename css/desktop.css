@@ -13,6 +13,11 @@ html{
   margin: 0 auto;
 }
 
+.container-med{
+  width: 70%;
+  margin: 0 auto;
+}
+
 .container-thin{
   width: 50%;
   margin: 0 auto;
@@ -265,8 +270,15 @@ nav a:HOVER{
 }
 
 .text-block p{
-  font-size: 1rem;
+  font-size: .8rem;
   text-align: justify;
+}
+
+.text-block h2{
+  width: 400px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #333;
+  margin-bottom: 30px;
 }
 
 .partners{
@@ -286,6 +298,41 @@ nav a:HOVER{
   margin: 20px 20px;
 }
 
+/* league marquee */
+.league-marquee{
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee1{
+  display: inline-block;
+  animation: marquee1 40s linear infinite;
+}
+
+.marquee2{
+  display: inline-block;
+  animation: marquee2 40s linear infinite;
+  animation-delay: 20s;
+}
+
+@keyframes marquee1{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2{
+  0%{
+    transform: translateX(0%)
+  }
+  100%{
+    transform: translateX(-200%);
+  }
+}
+
 /* location map */
 .location-map{
   margin-top: 50px;
@@ -302,13 +349,39 @@ nav a:HOVER{
   border-bottom: 3px dotted #ccc;
 }
 
-.location-map img{
-  margin-top: 40px;
+.location-map .container-thin{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: right;
+}
+
+.location-map .container-thin h3{
+  font-weight: bold;
+}
+
+.location-map .container-thin p{
+  font-size: .6rem;
+}
+
+.location-map .container-thin img{
   width: 100%;
 }
 
-.location-map .container{
+.location-map .container-med{
   display: flex;
+  justify-content: space-between;
+  text-align: right;
+}
+
+.location-map a{
+  color: #195C96;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.location-map a:HOVER{
+  text-decoration: underline;
 }
 
 /* footer homepage */
@@ -316,7 +389,7 @@ footer.homepage{
   width: 100%;
   padding: 10px 0;
   color: #999;
-  font-size: smaller;
+  font-size: .5rem;
   position: fixed;
   bottom: 0;
 }
@@ -326,6 +399,10 @@ footer{
   width: 100%;
   color: #999;
   padding: 10px 0;
+}
+
+footer h3{
+  font-size: .550rem;
 }
 
 footer a{
