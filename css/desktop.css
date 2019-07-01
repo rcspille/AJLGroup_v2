@@ -13,6 +13,11 @@ html{
   margin: 0 auto;
 }
 
+.container-thin{
+  width: 50%;
+  margin: 0 auto;
+}
+
 /* fonts */
 h1, h2, h3, h4, h5, h6{
   font-family: 'Oswald', sans-serif;
@@ -36,6 +41,7 @@ h3{
 
 p{
   font-size: .8rem;
+  line-height: 1.4;
 }
 
 /* color styles */
@@ -45,6 +51,10 @@ p{
 
 .dark-gray-bg{
   background-color: #3b3b3b;
+}
+
+.light-gray-bg{
+  background-color: #eee;
 }
 
 /* header */
@@ -122,6 +132,21 @@ nav a:HOVER{
   height: 300px;
   background-color: #efefef;
   background-image:url(https://www.mm-sports.eu/wp-content/uploads/2018/02/Home_Neu_1400x640.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  filter: brightness(.3);
+  position: absolute;
+  z-index: -3;
+  padding-bottom: 80px;
+}
+
+.distribution-bg{
+  width: 100%;
+  height: 300px;
+  background-color: #efefef;
+  background-image:url(https://www.sportsvideo.org/new/wp-content/uploads/2017/12/NEPWorldFirstIPRemoteProductionHubLIVE.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -220,6 +245,33 @@ nav a:HOVER{
   cursor: pointer;
   background-color: #195C96;
   color: #fff;
+}
+
+/* text block */
+.text-block{
+  width: 100%;
+}
+
+.text-block p{
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.partners{
+  width: 100%;
+  background-color: #eee;
+  padding: 20px 0;
+}
+
+.partners-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.partners-grid img{
+  width: 30%;
+  margin: 20px 20px;
 }
 
 /* location map */
