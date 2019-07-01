@@ -1,3 +1,7 @@
+::-webkit-scrollbar{
+  display: none;
+}
+
 /* universal */
 html{
   font-size: 16pt;
@@ -141,6 +145,7 @@ nav a:HOVER{
 /* grid */
 .grid{
   width: 100%;
+  margin-top: 140px;
 }
 
 .grid .container{
@@ -157,6 +162,22 @@ nav a:HOVER{
 
 .grid img{
   width: 100%;
+  transform: scale(1);
+  filter: opacity(1);
+  transition:
+    transform .3s ease-out,
+    filter .3s ease-out;
+}
+
+.grid img:HOVER{
+  transform: scale(1.2);
+  filter: opacity(.8);
+}
+
+.grid .img-container{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .grid-item-text{
@@ -212,8 +233,9 @@ nav a:HOVER{
 .location-map h2{
   width: 300px;
   margin: 0 auto;
-  padding-bottom: 40px;
-  border-bottom: 3px solid #ccc;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 3px dotted #ccc;
 }
 
 .location-map img{
@@ -233,4 +255,37 @@ footer.homepage{
   font-size: smaller;
   position: fixed;
   bottom: 0;
+}
+
+/* footer main */
+footer{
+  width: 100%;
+  color: #999;
+  padding: 10px 0;
+}
+
+footer a{
+  text-decoration: none;
+  color: #999;
+}
+
+footer a:HOVER{
+  color: #fff;
+}
+
+footer .container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+footer .grid-item-33:first-child{
+  text-align: left;
+}
+
+footer .grid-item-33{
+  text-align: center;
+}
+
+footer .grid-item-33:last-child{
+  text-align: right;
 }
