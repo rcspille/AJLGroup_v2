@@ -179,10 +179,22 @@ nav a:HOVER{
   flex-wrap: wrap;
 }
 
+.grid-item-20{
+  width: 19%;
+}
+
 .grid-item-33{
   width: 30%;
   margin: 0 20px;
   min-width: 300px;
+}
+
+.grid-item-66{
+  width: 60%;
+}
+
+.grid-item-80{
+  width: 79%;
 }
 
 .grid img{
@@ -292,11 +304,11 @@ nav a:HOVER{
 
 .location-map img{
   margin-top: 40px;
-  width: 50%;
+  width: 100%;
 }
 
 .location-map .container{
-  padding: 40px 0;
+  display: flex;
 }
 
 /* footer homepage */
