@@ -9,10 +9,6 @@ html{
   margin: 0 auto;
 }
 
-.black-bg{
-  background-color: #000;
-}
-
 /* fonts */
 h1, h2, h3, h4, h5, h6{
   font-family: 'Oswald', sans-serif;
@@ -36,6 +32,15 @@ h3{
 
 p{
   font-size: .8rem;
+}
+
+/* color styles */
+.black-bg{
+  background-color: #000;
+}
+
+.dark-gray-bg{
+  background-color: #3b3b3b;
 }
 
 /* header */
@@ -178,9 +183,12 @@ nav a:HOVER{
   background-color: transparent;
   border: 0;
   font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
-  border: 2px solid #333;
+  font-size: .9rem;
+  font-weight: bold;
+  border: 2px solid #195C96;
+  color: #195C96;
   border-radius: 50px;
+  transition: background-color .3s ease-out;
 }
 
 .grid-item-text button:FOCUS{
@@ -189,8 +197,32 @@ nav a:HOVER{
 
 .grid-item-text button:HOVER{
   cursor: pointer;
-  background-color: blue;
+  background-color: #195C96;
   color: #fff;
+}
+
+/* location map */
+.location-map{
+  margin-top: 50px;
+  text-align: center;
+  padding: 40px 0;
+  color: #ccc;
+}
+
+.location-map h2{
+  width: 300px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  border-bottom: 3px solid #ccc;
+}
+
+.location-map img{
+  margin-top: 40px;
+  width: 50%;
+}
+
+.location-map .container{
+  padding: 40px 0;
 }
 
 /* footer homepage */
