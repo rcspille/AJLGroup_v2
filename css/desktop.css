@@ -384,6 +384,59 @@ nav a:HOVER{
   text-decoration: underline;
 }
 
+.location-map a.icon{
+  color: #999;
+  text-decoration: none;
+  transition:
+    color .2s ease-out;
+}
+
+.location-map a.icon:HOVER{
+  color: #fff;
+}
+
+/* contact form */
+#form input, #form textarea{
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+}
+
+#form input:FOCUS, #form textarea:FOCUS{
+  border: 1px solid #999;
+  outline: none;
+}
+
+#form .half-width{
+  width: 49%;
+}
+
+#form .full-width{
+  width: 100%;
+}
+
+#form .button{
+  background-color: #fff;
+  color: #195C96;
+  padding: 3px 40px;
+  border: 3px solid #195C96;
+  border-radius: 30px;
+  transition:
+    background-color .3s ease-out;
+}
+
+#form .button:HOVER, #form .button:FOCUS{
+  background-color: #195C96;
+  border: 3px solid #195C96;
+  color: #fff;
+  cursor: pointer;
+}
+
+#form .button:ACTIVE{
+  background-color: #113F66;
+}
+
 /* footer homepage */
 footer.homepage{
   width: 100%;
@@ -408,6 +461,8 @@ footer h3{
 footer a{
   text-decoration: none;
   color: #999;
+  transition:
+    color .2s ease-out;
 }
 
 footer a:HOVER{
