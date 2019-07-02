@@ -44,6 +44,10 @@ h3{
   font-size: .7rem;
 }
 
+.text-block h3, .grid h3{
+  font-size: 1rem;
+}
+
 p{
   font-size: .8rem;
   line-height: 1.4;
@@ -162,6 +166,36 @@ nav a:HOVER{
   padding-bottom: 80px;
 }
 
+.sports-marketing-bg{
+  width: 100%;
+  height: 300px;
+  background-color: #efefef;
+  background-image:url(https://www.prosoccerusa.com/wp-content/uploads/2019/02/USATSI_12176018.jpg);
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  filter: brightness(.3);
+  position: absolute;
+  z-index: -3;
+  padding-bottom: 80px;
+}
+
+.contact-bg{
+  width: 100%;
+  height: 300px;
+  background-color: #efefef;
+  background-image:url(https://www.stlmag.com/downloads/298057/download/Interior.jpg?cb=c254033a4377291d51ce48c4f2d421a4&w=1050&h=);
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  filter: brightness(.3);
+  position: absolute;
+  z-index: -3;
+  padding-bottom: 80px;
+}
+
 .banner-text{
   display: flex;
   width: 100%;
@@ -216,7 +250,7 @@ nav a:HOVER{
   filter: opacity(.8);
 }
 
-.grid .img-container{
+.img-container{
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -294,7 +328,7 @@ nav a:HOVER{
 }
 
 .partners-grid img{
-  width: 30%;
+  width: 25%;
   margin: 20px 20px;
 }
 
@@ -366,6 +400,12 @@ nav a:HOVER{
 
 .location-map .container-thin img{
   width: 100%;
+  transition:
+    transform .5s ease-out;
+}
+
+.location-map .container-thin img:HOVER{
+  transform: scale(1.5) translateX(80px) translateY(40px);
 }
 
 .location-map .container-med{
@@ -401,6 +441,7 @@ nav a:HOVER{
   font-family: 'Montserrat', sans-serif;
   background-color: #fafafa;
   border: 1px solid #ccc;
+  padding: 5px 10px;
 }
 
 #form input:FOCUS, #form textarea:FOCUS{
@@ -409,11 +450,11 @@ nav a:HOVER{
 }
 
 #form .half-width{
-  width: 49%;
+  width: 46%;
 }
 
 #form .full-width{
-  width: 100%;
+  width: calc(100% - 20px);
 }
 
 #form .button{
