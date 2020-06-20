@@ -9,17 +9,17 @@ html{
 
 /* section containers */
 .container{
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
 }
 
 .container-med{
-  width: 70%;
+  width: 95%;
   margin: 0 auto;
 }
 
 .container-thin{
-  width: 50%;
+  width: 95%;
   margin: 0 auto;
 }
 
@@ -219,21 +219,21 @@ nav a:HOVER{
 }
 
 .grid-item-20{
-  width: 19%;
+  width: 100%;
 }
 
 .grid-item-33{
-  width: 30%;
+  width:  100%;
   margin: 0 20px;
   min-width: 300px;
 }
 
 .grid-item-66{
-  width: 60%;
+  width: 100%;
 }
 
 .grid-item-80{
-  width: 79%;
+  width: 100%;
 }
 
 .grid img{
@@ -385,9 +385,10 @@ nav a:HOVER{
 
 .location-map .container-thin{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  text-align: center;
   align-items: center;
-  text-align: right;
 }
 
 .location-map .container-thin h3{
@@ -400,23 +401,20 @@ nav a:HOVER{
 
 .location-map .container-thin img{
   width: 100%;
-  min-width: 300px;
   transition:
     transform .5s ease-out;
+  margin-bottom: 50px;
 }
 
+/*
 .location-map .container-thin img:HOVER{
   transform: scale(1.5) translateX(80px) translateY(40px);
 }
+*/
 
 .location-map .container-med{
   display: flex;
   justify-content: space-between;
-  text-align: right;
-}
-
-.location-map .container-thin .grid-item-33{
-  border-left: 1px dotted #999;
 }
 
 .location-map a{
@@ -455,7 +453,8 @@ nav a:HOVER{
 }
 
 #form .half-width{
-  width: 46%;
+  width: calc(100% - 20px);
+  margin-bottom: 20px;
 }
 
 #form .full-width{
@@ -518,6 +517,10 @@ footer a:HOVER{
 footer .container{
   display: flex;
   flex-wrap: wrap;
+}
+
+footer img{
+  width: 100%;
 }
 
 footer .grid-item-33:first-child{
