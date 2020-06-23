@@ -1,138 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<!--
-  TITLE: AJL GROUP
-  RILEY SPILLER (SPILLER.RILEY@GMAIL.COM)
--->
-
-<html>
-
+<html lang="en">
 <head>
-  <!-- metadata -->
-  <title>Expertise | AJL Group</title>
+  <meta charset="utf-8">
+  <title>Sports Marketing, Rights &amp; Distribution | London | AJL Group</title>
   <meta name="keywords" content="" />
   <meta name="description" content="" />
 
-  <!-- css reset -->
-  <link rel="stylesheet" type="text/css" href="./css/reset.css">
-
-  <!-- local css -->
-  <link rel="stylesheet" type="text/css" media="screen and (min-width: 900px)" href="./css/desktop.css">
-  <link rel="stylesheet" type="text/css" media="screen and (min-width: 501px) and (max-width: 900px)" href="./css/tablet.css">
-  <link rel="stylesheet" type="text/css" media="screen and (max-width: 500px)" href="./css/mobile.css">
-
-  <!-- fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700|Oswald:300,400,700&display=swap" rel="stylesheet">
-
-  <!-- font awesome -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700|Oswald:300,400,700&amp;display=swap" rel="stylesheet">
 
-  <!-- analytics -->
-  <!-- Google analytics go here -->
 </head>
 
 <body>
-  <!-- desktop HEADER AND NAV -->
-  <header class="desktop black-bg">
-    <div class="container" role="presentation">
-      <div class="logo" role="presentation">
-        <h3>AJL Group</h3>
-      </div>
-      <nav role="navigation">
-        <a href="./expertise.html" class="active"><h3>EXPERTISE</h3></a>
-        <a href="./distribution.html"><h3>DISTRIBUTION</h3></a>
-        <a href="./sports-marketing.html"><h3>SPORTS MARKETING</h3></a>
-        <a href="./contact.html"><h3>CONTACT</h3></a>
-      </nav>
-    </div>
-  </header>
+  <!-- begin NAVBAR -->
+    <!--<div class="container pt-0 pb-0">-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-black pt-0 pb-0 sticky-top">
+        <div class="container-fluid pt-0 pb-0 pl-5 pr-5">
+        <a class="navbar-brand" href="index.html">AJL Group</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <!-- desktop BANNER -->
-  <div class="banner-md">
-    <div class="expertise-bg"></div>
-    <div class="banner-text">
-      <h1>EXPERTISE</h1>
-    </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" role="navigation">
+          <ul class="nav navbar-nav ml-auto text-sm-center text-center">
+            <a class="no-underline" href="#">
+              <li class="nav-item active">
+                EXPERTISE <span class="sr-only">(current)</span>
+              </li>
+            </a>
+            <a class="nav-link" href="distribution.html">
+              <li class="nav-item">
+                DISTRIBUTION
+              </li>
+            </a>
+            <a class="nav-link" href="sports-marketing.html">
+              <li class="nav-item">
+                SPORTS MARKETING
+              </li>
+            </a>
+            <a class="nav-link" href="contact.html">
+              <li class="nav-item">
+                CONTACT
+              </li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      </nav>
+    <!--</div>-->
+  <!-- end NAVBAR -->
+
+  <!-- begin JUMBOTRON -->
+  <div class="jumbotron-custom text-center d-block pt-0 pb-0 pl-0 pr-0">
+    <div class="spotlight-bg expertise-bg"></div>
+    <h1 class="col-12 d-flex align-items-center justify-content-center">
+      <span><b>EXPERTISE</b></span>
+    </h1>
     <div class="pointer-down">
       <div class="gray-bar"></div>
       <img src="./media/site/gray-bg-triangle.png">
       <div class="gray-bar"></div>
     </div>
   </div>
+  <!-- end JUMBOTRON -->
 
-  <!-- expertise items grid -->
-  <article class="grid" aria-label="Expertise Categories">
-    <div class="container" role="presentation">
+  <!-- begin ARTICLE -->
+  <article class="container grid d-flex flex-wrap justify-content-center pt-5" aria-label="Categories of Expertise">
       <!-- rights & distribution -->
-      <div class="grid-item-33">
+      <div class="col-lg-5 col-md-6 col-sm-10 col-12 mr-lg-3 mb-5">
         <div class="img-container">
           <a href="distribution.html"><img src="./media/cameraman.jpg"></a>
         </div>
         <div class="grid-item-text">
-          <h2>RIGHTS &AMP; DISTRIBUTION</h2>
+          <h3>RIGHTS &AMP; DISTRIBUTION</h3>
           <p>On behalf of more than 100 clients across sports and entertainment, we negotiate media rights and arrange for distribution of content through AJL Group.</p>
           <a href="distribution.html"><button>LEARN MORE</button></a>
         </div>
       </div>
       <!-- sports marketing -->
-      <div class="grid-item-33">
+      <div class="col-lg-5 col-md-6 col-sm-10 col-12 mb-5">
         <div class="img-container">
           <a href="sports-marketing.html"><img src="./media/footballers.jpg"></a>
         </div>
         <div class="grid-item-text">
-          <h2>SPORTS MARKETING</h2>
+          <h3>SPORTS MARKETING</h3>
           <p>AJL Group is the agency for professional footballers dedicated to the ongoing development and management of their careers.</p>
           <a href="sports-marketing.html"><button>LEARN MORE</button></a>
         </div>
       </div>
-    </div>
   </article>
+  <!-- end ARTICLE -->
 
-  <!-- location map -->
-  <aside class="location-map dark-gray-bg">
-    <div class="container-thin">
-      <div class="grid-item-66">
-        <div class="img-container">
-          <img src="./media/site/location-map.png" alt="Location map with pins on Los Angeles, California, and London, England.">
+  <!-- begin FOOTER -->
+  <footer>
+    <div class="container-fluid bg-dark-gray pt-5">
+      <div class="container">
+        <div class="row d-flex justify-content-center flex-wrap">
+          <img src="media/site/location-map.png" class="col-xl-5 col-lg-6 col-md-5 col-12">
+          <div class="col-xl-4 col-lg-6 col-md-7 col-12 text-md-right text-center">
+            <h6><b>CONTACTS</b></h6>
+            <p>
+              Tel: <a href="tel:+44(555)5555"><b>+44.555.5555</b></a><br>
+              Email: <a href="mailto:aaron@ajlgroup.co.uk"><b>Aaron@AJLGroup.co.uk</b></a>
+            </p>
+            <p>
+              228B Baker Street<br>
+              London, England
+            </p>
+            <p>
+              <a href="#" class="icon"><i class="fa fa-facebook fa-lg"></i></a>
+              <a href="#" class="icon"><i class="fa fa-instagram fa-lg"></i></a>
+              <a href="#" class="icon"><i class="fa fa-twitter fa-lg"></i></a>
+            </p>
+          </div>
         </div>
       </div>
-      <div class="grid-item-33">
-        <h3>CONTACTS</h3><br>
-        <p>Tel: <a href="tel:333333">+44.353.247757</a></p>
-        <p>Email: <a href="mailto:info@ajlgroup.co.uk">info@AJLGroup.co.uk</a></p>
-        <br>
-        <p>228B Baker Street</p>
-        <p>London, England</p>
-        <br>
-        <a href="#" class="icon"><i class="fa fa-facebook"></i></a> &nbsp;
-        <a href="#" class="icon"><i class="fa fa-instagram"></i></a> &nbsp;
-        <a href="#" class="icon"><i class="fa fa-twitter"></i></a>
-      </div>
     </div>
-  </aside>
-
-  <!-- footer -->
-  <footer class="desktop black-bg">
-    <div class="container">
-      <div class="grid-item-33">
-        <h3>
-          <a href="expertise.html">Expertise</a> &nbsp; | &nbsp;
-          <a href="distribution.html">Distribution</a> &nbsp; | &nbsp;
-          <a href="sports-marketing.html">Sports Marketing</a> &nbsp; | &nbsp;
-          <a href="contact.html">Contact</a>
-        </h3>
-      </div>
-      <div class="grid-item-33">
-        <h3>Copyright 2019 AJL Group. All rights reserved.</h3>
-      </div>
-      <div class="grid-item-33">
-        <h3>
-          <i class="fa fa-phone"></i> &nbsp; <a href="tel:+44352247575">+44.352.247575</a> &nbsp; | &nbsp;
-          <i class="fa fa-envelope"></i> &nbsp; <a href="mailto:example@example.com">services@AJLGroup.co.uk</a>
-        </h3>
+    <div class="container-fluid bg-black  btm-links pt-1 pb-1">
+      <div class="row d-flex justify-content-between align-items-center flex-wrap">
+        <div class="col-xl-4 col-md-6 col-12 text-xl-left text-center" role="navigation">
+          <a href="index.html">HOME</a>&nbsp; | &nbsp;
+          <a href="expertise.html">EXPERTISE</a>&nbsp; | &nbsp;
+          <a href="distribution.html">DISTRIBUTION</a>&nbsp; | &nbsp;
+          <a href="sports-marketing.html">SPORTS MARKETING</a>&nbsp; | &nbsp;
+          <a href="contact.html">CONTACT</a>
+        </div>
+        <div class="col-xl-4 col-md-6 col-12 text-md-center text-xl-center text-center">
+          Copyright &copy; 2020 AJL Group. Developed by <a href="http://rcspille.github.io/SunflowerMedia" target="_blank">Sunflower Media.</a>
+        </div>
+        <div class="col-xl-4 col-md-6 col-12 text-xl-right text-center">
+          <i class="fa fa-phone"></i> &nbsp; <a href="tel:+44(555)5555"> +44.555.5555</a> <i class="fa fa-envelope"></i> &nbsp; <a href="mailto:aaron@ajlgroup.co.uk"> Aaron@AJLGroup.co.uk</a>
+        </div>
       </div>
     </div>
   </footer>
-</body>
 
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
 </html>
