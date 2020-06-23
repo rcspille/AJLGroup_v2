@@ -57,6 +57,10 @@ html{
   .distribution-bg{
     background-image:url("../media/site/distribution-bg.jpg");
   }
+  .sports-marketing-bg{
+    background-image:url("../media/site/sports-marketing-bg.jpg");
+    background-position: top;
+  }
 
 /* NAVBAR */
 .navbar,h1,h2,h3{
