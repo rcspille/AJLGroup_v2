@@ -11,6 +11,13 @@ html{
   text-decoration: none;
 }
 
+@media only screen and (max-width: 768px){
+  /* for mobile phones */
+  [class*="col-"]{
+    width: 100%;
+  }
+}
+
 /* COLORS */
 .bg-black{
   background-color: #000;
