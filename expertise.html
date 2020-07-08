@@ -24,7 +24,7 @@
     <!--<div class="container pt-0 pb-0">-->
       <nav class="navbar navbar-expand-lg navbar-dark bg-black pt-0 pb-0 sticky-top">
         <div class="container-fluid pt-0 pb-0 pr-md-5 pl-md-5 pr-sm-0 pl-sm-0 pr-0 pl-0">
-        <a class="navbar-brand" href="index.html">AJL Group</a>
+        <a class="navbar-brand" href="index.html"><img src="./media/logos/logo-design-dark-blue.png" style="height: 40px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,7 +61,7 @@
   <!-- begin JUMBOTRON -->
   <div class="jumbotron-custom text-center d-block pt-0 pb-0 pl-0 pr-0">
     <div class="spotlight-bg expertise-bg"></div>
-    <h1 class="col-12 d-flex align-items-center justify-content-center">
+    <h1 class="col-12 d-flex align-items-center justify-content-center" data-aos="zoom-in">
       <span><b>EXPERTISE</b></span>
     </h1>
     <div class="pointer-down">
@@ -75,7 +75,7 @@
   <!-- begin ARTICLE -->
   <article class="container grid d-flex flex-wrap justify-content-center pt-5 text-center" aria-label="Categories of Expertise">
       <!-- rights & distribution -->
-      <div class="col-lg-5 col-md-6 col-sm-10 col-12 mr-lg-3 mb-5" data-aos="fade-right" data-aos-once="true">
+      <div class="col-lg-5 col-md-6 col-sm-10 col-12 mr-lg-3 mb-5" data-aos="fade-right">
         <div class="img-container">
           <a href="distribution.html"><img src="./media/cameraman.jpg"></a>
         </div>
@@ -102,17 +102,17 @@
   <!-- begin FOOTER -->
   <footer>
     <div class="container-fluid bg-dark-gray pt-5">
-      <div class="container" data-aos="fade-up" data-aos-once="true">
+      <div class="container" data-aos="fade-right">
         <div class="row d-flex justify-content-center flex-wrap">
           <img src="media/site/location-map.png" class="col-xl-5 col-lg-6 col-md-5 col-12">
           <div class="col-xl-4 col-lg-6 col-md-7 col-12 text-md-right text-center">
             <h6><b>CONTACTS</b></h6>
             <p>
-              Tel: <a href="tel:+44(555)5555"><b>+44.555.5555</b></a><br>
+              Tel: <a href="tel:+44(0)2077314730"><b>+44(0)2077314730</b></a><br>
               Email: <a href="mailto:aaron@ajlgroup.co.uk"><b>Aaron@AJLGroup.co.uk</b></a>
             </p>
             <p>
-              228B Baker Street<br>
+              Bramham Gardens SW5 0HQ<br>
               London, England
             </p>
             <p>
@@ -134,10 +134,10 @@
           <a href="contact.html">CONTACT</a>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-12 col-12 text-md-center text-xl-center text-center">
-          Copyright &copy; 2020 AJL Group. Developed by <a href="http://rcspille.github.io/SunflowerMedia" target="_blank">Sunflower Media.</a>
+          Copyright &copy; 2020 AJL Group. Developed by <a href="mailto:spiller.riley@gmail.com" target="_blank">Riley <i class="fa fa-sm fa-smile-o ml-1"></i></a>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-12 col-12 text-xl-right text-center">
-          <i class="fa fa-phone"></i> &nbsp; <a href="tel:+44(555)5555"> +44.555.5555</a> <i class="fa fa-envelope"></i> &nbsp; <a href="mailto:aaron@ajlgroup.co.uk"> Aaron@AJLGroup.co.uk</a>
+          <i class="fa fa-phone"></i> &nbsp; <a href="tel:+44(0)2077314730"> +44(0)2077314730</a> <i class="fa fa-envelope"></i> &nbsp; <a href="mailto:aaron@ajlgroup.co.uk"> Aaron@AJLGroup.co.uk</a>
         </div>
       </div>
     </div>
@@ -147,7 +147,10 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
   </script>
 </body>
 </html>
