@@ -20,6 +20,87 @@
 </head>
 
 <body>
+  
+  <!-- CONTACT FORM SCRIPT -->
+  <?php
+  // define variables and set to empty values
+  $name = $email = $phone = $company = $subject = $message = "";
+  $nameErr = $emailErr = $phoneErr = $companyErr = $subjectErr = $messageErr = "";
+  $success = "";
+	
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["name"])){
+      $nameErr = "Name is required.";
+    } else {
+      $name = test_input($_POST["name"]);
+      $nameErr = "";
+      if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+ 	    $nameErr = "Only letters and white space allowed.";
+      }
+    }
+
+    if (empty($_POST["email"])){
+      $emailErr = "Email is required.";
+    } else {
+      $email = test_input($_POST["email"]);
+      $emailErr = "";
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Invalid email format.";
+      }
+    }
+
+    if (empty($_POST["phone"])){
+      $phoneErr = "";
+    } else {
+      $phone = test_input($_POST["phone"]);
+      $phoneErr = "";
+      if (!preg_match("/^[0-9 + ( )]{0,20}$/",$phone)) {
+        $phoneErr = "Only 0-9, +, () allowed.";
+      }
+    }
+
+    if (empty($_POST["company"])){
+      $companyErr = "";
+    } else {
+       $company = test_input($_POST["company"]);
+    }
+
+    if (empty($_POST["subject"])){
+      $subjectErr = "Subject is required.";
+    } else {
+      $subject = test_input($_POST["subject"]);
+      $subjectErr = "";
+    }
+
+    if (empty($_POST["message"])){
+      $messageErr = "Message is required.";
+    } else {
+      $message = test_input($_POST["message"]);
+      $messageErr = "";
+    }
+  }
+  
+  function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
+  
+  if ($_SERVER["REQUEST_METHOD"] == "POST" && $nameErr == "" && $emailErr == "" && $phoneErr == "" && $companyErr == "" && $subjectErr == "" && $messageErr == "") {
+    $to = "spiller.riley@gmail.com";
+    $emailSubject = "Contact Form Submission";
+    $txt = "<b>From:</b> " .$name. "<br><b>Email:</b> " .$email. "<br><b>Phone:</b> " .$phone. "<br><b>Company:</b> " .$company. "<br><b>Subject:</b> " .$subject. "<br><b>Message:</b><br>" .$message;
+    $headers = "reply-to: ".$email. "\r\n";
+    $headers .= "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+	
+    mail($to,$emailSubject,$txt,$headers)
+      or die();
+    $success = "Mail sent successfully! We&#39;ll have someone with you soon.";
+  }
+  ?>
+  
   <!-- begin NAVBAR -->
     <!--<div class="container pt-0 pb-0">-->
       <nav class="navbar navbar-expand-lg navbar-dark bg-black pt-0 pb-0 sticky-top">
@@ -48,7 +129,7 @@
             </a>
             <a class="no-underline" href="#">
               <li class="nav-item active">
-                CONTACT
+                CONTACT 
               </li>
             </a>
           </ul>
@@ -74,42 +155,48 @@
 
   <!-- begin ARTICLE -->
   <div class="container-fluid bg-gray">
-  <article class="container grid d-flex flex-wrap justify-content-center pt-4" aria-label="Contact Form AJL Group">
+  <article class="container d-flex flex-wrap justify-content-center pt-4" aria-label="Contact Form AJL Group">
       <!-- CONTACT FORM -->
       <div class="col-lg-9 col-md-10 col-sm-12 col-12 mb-4">
         <div class="grid-item-text no-decoration" data-aos="fade-right">
           <h3 class="text-center mb-4">We&#39;d Love to Hear from You!</h3>
           <p class="text-center">Please direct all enquiries below, and we will get back to you in a timely manner.</p>
             <!-- FORM -->
-            <form id="contact" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" class="d-flex flex-wrap">
+            <?php if($success!=""){echo "
+            	<center>
+                <h4 class='text-success'>".$success."</h4><br>
+  				<img src='./media/logos/logo-design-dark-blue-lg.png'>
+                </center>
+  			";}?>
+            <form id="contact" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="<?php if ($success != ""){echo "d-none";}else{echo "d-flex flex-wrap";}?>">
               <div class="col-sm-6 col-12">
                 <div class="form-group">
-                  <input type="text" class="form-control" id="name" placeholder="Your name" value="<?php echo $name;?>">
-                  <span class="error">* <?php echo $nameErr;?></span>
+                  <input type="text" class="form-control" name="name" placeholder="*Your Name" value="<?php echo $name;?>">
+                  <span class="text-danger"><?php echo $nameErr;?></span>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" id="email" placeholder="Email" value="<?php echo $email;?>">
-                  <span class="error">* <?php echo $emailErr;?></span>
+                  <input type="email" class="form-control" name="email" placeholder="*Email" value="<?php echo $email;?>">
+                  <span class="text-danger"><?php echo $emailErr;?></span>
                 </div>
               </div>
               <div class="col-sm-6 col-12">
                 <div class="form-group">
-                  <input type="phone" class="form-control" id="phone" placeholder="Phone Number" value="<?php echo $phone;?>">
-                  <span class="error">* <?php echo $phoneErr;?></span>
+                  <input type="tel" class="form-control" name="phone" placeholder="Phone Number" value="<?php echo $phone;?>">
+                  <span class="text-danger"><?php echo $phoneErr;?></span>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="company" placeholder="Company Name" value="<?php echo $company;?>">
-                  <span class="error">* <?php echo $companyErr;?></span>
+                  <input type="text" class="form-control" name="company" placeholder="Company Name" value="<?php echo $company;?>">
+                  <span class="text-danger"><?php echo $companyErr;?></span>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-group">
-                  <input type="text" class="form-control" id="subject" placeholder="Message Subject" value="<?php echo $subject;?>">
-                  <span class="error">* <?php echo $subjectErr;?></span>
+                  <input type="text" class="form-control" name="subject" placeholder="*Message Subject" value="<?php echo $subject;?>">
+                  <span class="text-danger"><?php echo $subjectErr;?></span>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" id="message" placeholder="What&#39;s on your mind? Please enter your enquiry here." rows="6"><?php echo $message;?></textarea>
-                  <span class="error">* <?php echo $messageErr;?></span>
+                  <textarea class="form-control" name="message" placeholder="*What&#39;s on your mind? Please enter your enquiry here." rows="6"><?php echo $message;?></textarea>
+                  <span class="text-danger"><?php echo $messageErr;?></span>
                 </div>
                 <div class="form-group">
                   <center><button type="submit">Send Message</button></center>
@@ -165,52 +252,7 @@
       </div>
     </div>
   </footer>
-
-  <!-- CONTACT FORM SCRIPT -->
-  <?php
-  // define variables and set to empty values
-  $nameErr = $emailErr = $phoneErr = $companyErr = $subjectErr = $messageErr = "";
-  $name = $email = $phone = $company = $subject = $message = "";
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["name"])) {
-      $nameErr = "Name is required";
-    } else {
-      $name = test_input($_POST["name"]);
-    }
-
-    if (empty($_POST["email"])) {
-      $emailErr = "Email is required";
-    } else {
-      $email = test_input($_POST["email"]);
-    }
-
-    if (empty($_POST["phone"])) {
-      $phone = "";
-    } else {
-      $phone = test_input($_POST["phone"]);
-    }
-
-    if (empty($_POST["company"])) {
-      $company = "";
-    } else {
-      $company = test_input($_POST["company"]);
-    }
-
-    if (empty($_POST["subject"])) {
-      $subject = "";
-    } else {
-      $subject = test_input($_POST["subject"]);
-    }
-
-    if (empty($_POST["message"])) {
-      $messageErr = "Message is required";
-    } else {
-      $message = test_input($_POST["message"]);
-    }
-  }
-  ?>
-
+  
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
