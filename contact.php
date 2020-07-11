@@ -20,14 +20,14 @@
 </head>
 
 <body>
-  
+
   <!-- CONTACT FORM SCRIPT -->
   <?php
   // define variables and set to empty values
   $name = $email = $phone = $company = $subject = $message = "";
   $nameErr = $emailErr = $phoneErr = $companyErr = $subjectErr = $messageErr = "";
   $success = "";
-	
+
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["name"])){
       $nameErr = "Name is required.";
@@ -79,14 +79,14 @@
       $messageErr = "";
     }
   }
-  
+
   function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
   }
-  
+
   if ($_SERVER["REQUEST_METHOD"] == "POST" && $nameErr == "" && $emailErr == "" && $phoneErr == "" && $companyErr == "" && $subjectErr == "" && $messageErr == "") {
     $to = "spiller.riley@gmail.com";
     $emailSubject = "Contact Form Submission";
@@ -94,13 +94,13 @@
     $headers = "reply-to: ".$email. "\r\n";
     $headers .= "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-	
+
     mail($to,$emailSubject,$txt,$headers)
       or die();
     $success = "Mail sent successfully! We&#39;ll have someone with you soon.";
   }
   ?>
-  
+
   <!-- begin NAVBAR -->
     <!--<div class="container pt-0 pb-0">-->
       <nav class="navbar navbar-expand-lg navbar-dark bg-black pt-0 pb-0 sticky-top">
@@ -129,7 +129,7 @@
             </a>
             <a class="no-underline" href="#">
               <li class="nav-item active">
-                CONTACT 
+                CONTACT
               </li>
             </a>
           </ul>
@@ -214,7 +214,8 @@
     <div class="container-fluid bg-dark-gray pt-5">
       <div class="container" data-aos="fade-right">
         <div class="row d-flex justify-content-center flex-wrap">
-          <img src="media/site/location-map.png" class="col-xl-5 col-lg-6 col-md-5 col-12">
+          <img src="media/site/location-map.png" class="col-xl-5 col-lg-6 col-md-5 col-12 d-sm-block d-none">
+          <img src="media/site/location-map-mobile.png" class="d-sm-none d-block mb-3" style="border: 1px solid #666; width: 100%">
           <div class="col-xl-4 col-lg-6 col-md-7 col-12 text-md-right text-center">
             <h6><b>CONTACTS</b></h6>
             <p>
@@ -243,7 +244,7 @@
           <a href="sports-marketing.html">SPORTS MARKETING</a>&nbsp; | &nbsp;
           <a href="contact.php">CONTACT</a>
         </div>
-        <div class="col-xl-4 col-md-6 col-sm-12 col-12 text-md-center text-xl-center text-center">
+        <div class="col-xl-4 col-md-6 col-sm-12 col-12 d-sm-block d-none text-md-center text-xl-center text-center">
           Copyright &copy; 2020 AJL Group. Developed by <a href="mailto:spiller.riley@gmail.com" target="_blank">Riley <i class="fa fa-sm fa-smile-o ml-1"></i></a>
         </div>
         <div class="col-xl-4 col-md-6 col-sm-12 col-12 text-xl-right text-center">
@@ -252,7 +253,7 @@
       </div>
     </div>
   </footer>
-  
+
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
